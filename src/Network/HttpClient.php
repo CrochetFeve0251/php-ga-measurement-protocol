@@ -123,7 +123,7 @@ class HttpClient
     private function sendRequest(Request $request, array $options = [])
     {
         $opts = $this->parseOptions($options);
-        $response = $this->getClient()->sendAsync($request, [
+        $response = $this->getClient()->send($request, [
             'synchronous' => !$opts['async'],
             'timeout' => $opts['timeout'],
             'connect_timeout' => $opts['timeout'],
